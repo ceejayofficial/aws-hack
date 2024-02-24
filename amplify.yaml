@@ -1,0 +1,22 @@
+version: 1
+frontend:
+  phases:
+    build:
+      commands:
+        - cd client
+        - npm install
+        - npm run build
+  artifacts:
+    baseDirectory: client/build
+    files:
+      - '**/*'
+backend:
+  phases:
+    build:
+      commands:
+        - cd server
+        - npm install
+  artifacts:
+    baseDirectory: server
+    files:
+      - '**/*'
